@@ -1,59 +1,80 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MyClassLibrary
 {
     public class clsStaffCollection
     {
-        //private data member for the allStaffs list 
-        private List<clsStaff> mAllStaffs = new List<clsStaff>();
-        //publict property for Count
-        public int Count
+        //private data member fot the list 
+        List<clsStaff> mStaffList = new List<clsStaff>();
+        //private data member  thisStaff
+        clsStaff mThisStaff = new clsStaff();
+        public List<clsStaff> StaffList
         {
             get
             {
-                //return the count property of the private list 
-                return mAllStaffs.Count;
+                //return the private data
+                return mStaffList;
             }
             set
             {
-                //
+                //set the private data 
+                mStaffList = value;
             }
         }
 
-        //public property for allStaffs 
-        public List<clsStaff> AllStaffs
+        //public property for ThisAddress
+        public clsStaff ThisStaff
         {
-            //getter sends data to requesting code 
             get
             {
-                //return the private data member
-                return mAllStaffs;
+                //return the private data
+                return mThisStaff;
             }
-           //setter accepts data from other objects 
-           set
+            set
             {
-                //assign the incoming value to the private data member 
-                mAllStaffs = value;
+                //set the priavate data
+                mThisStaff = value;
             }
         }
-
-        //public constructor for the class 
-        public clsStaffCollection()
+        //add method
+        public int Add()
         {
-            //create an istance of the county class to store a staff
-            clsStaff AStaff = new clsStaff();
-            //set the staff number to .....
-            AStaff.StaffNumber = "P1622604";
-            //add the staff to the private list of staffs 
-            mAllStaffs.Add(AStaff);
-            //re initialise the AStaff object to accpet a new item
-            AStaff = new clsStaff();
-            //set the staff number to ....
-            AStaff.StaffNumber = "P1622605";
-            //add the second staff to the private list of stasffs
-            mAllStaffs.Add(AStaff);
-            //the private list now contains two staff numbers
+            //add a new record to the database based on the values of mThisStaff
+            //connnect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the sotred procudrue 
+            DB.AddParameter("@StaffNumber", mThisStaff.StaffNumber);
+            DB.AddParameter("@FirstName ", mThisStaff.FirstName);
+            DB.AddParameter("@LastName", mThisStaff.LastName);
+            DB.AddParameter("@Gender", mThisStaff.Gender);
+            DB.AddParameter("@PhoneNumber", mThisStaff.PhoneNumber);
+            DB.AddParameter("@Address", mThisStaff.Address);
+            DB.AddParameter("@Position ", mThisStaff.Position);
+            DB.AddParameter("@Attendence", mThisStaff.Attendence);
+            DB.AddParameter("@Password ", mThisStaff.Password);
+            //execute the query retuning the primary key value 
+            return DB.Execute("sprpc_tblStaff_Insert");
         }
-
+        //update method 
+        public void Update()
+        {
+            //update an existing record to the database based on the values of mThisStaff
+            //connnect to the database 
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the sotred procudrue
+            DB.AddParameter("@StaffID", mThisStaff.StaffID);
+            DB.AddParameter("@StaffNumber", mThisStaff.StaffNumber);
+            DB.AddParameter("@FirstName ", mThisStaff.FirstName);
+            DB.AddParameter("@LastName", mThisStaff.LastName);
+            DB.AddParameter("@Gender", mThisStaff.Gender);
+            DB.AddParameter("@PhoneNumber", mThisStaff.PhoneNumber);
+            DB.AddParameter("@Address", mThisStaff.Address);
+            DB.AddParameter("@Position ", mThisStaff.Position);
+            DB.AddParameter("@Attendence", mThisStaff.Attendence);
+            DB.AddParameter("@Password ", mThisStaff.Password);
+            //execute the query retuning the primary key value 
+            DB.Execute("sprpc_tblStaff_Update");
+        }
     }
 }

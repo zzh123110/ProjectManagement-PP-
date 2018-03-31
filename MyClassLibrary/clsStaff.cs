@@ -4,7 +4,8 @@ namespace MyClassLibrary
 {
     public class clsStaff
     {
-        //private data member for the Staffnumber property      
+        //private data member for the Staffnumber property 
+        private Int32 mStaffID;     
         private string mStaffNumber;
         private string mFirstName;
         private string mLastName;
@@ -34,15 +35,15 @@ namespace MyClassLibrary
             }
             return OK;
         }
-
-        public bool Search(string staffNumber)
+        
+        public bool Search(int StaffID)
         {
             //create an instance of the data connection
             clsDataConnection DB = new clsDataConnection();
             //add the parameter for the address on to search for 
-            DB.AddParameter("@StaffNumber", StaffNumber);
+            DB.AddParameter("@StaffID", StaffID);
             //excute the stored procedure
-            DB.Excute("sproc_tblStaff_FilterByStaffNumber");
+            DB.Execute("sproc_tblStaff_FilterByStaffID");
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
@@ -52,7 +53,7 @@ namespace MyClassLibrary
                 mGender = Convert.ToString(DB.DataTable.Rows[0]["Gender"]);
                 mPosition = Convert.ToString(DB.DataTable.Rows[0]["Position"]);
                 mAttendence = Convert.ToDouble(DB.DataTable.Rows[0]["Attendence"]);
-                mAddress = Convert.ToDouble(DB.DataTable.Rows[0]["Address"]);
+                mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
                 //return that everthing worked OK
                 return true;
             }
@@ -65,9 +66,24 @@ namespace MyClassLibrary
             
         }
 
-       //get and set all properties
-       //public property for the staff number 
-       public string StaffNumber
+        //get and set all properties
+        //public property for the staff ID 
+        public int StaffID
+        {
+            get
+            {
+                //return the private data 
+                return mStaffID;
+            }
+            set
+            {
+                //set the value of the private data member 
+                mStaffID = value;
+            }
+        }
+
+        //public property for the staff number 
+        public string StaffNumber
         {
             get
             {
@@ -125,7 +141,9 @@ namespace MyClassLibrary
                 mGender = value;
             }
         }
+
         
+
         //public propert for the Position
         public string Position
         {
@@ -201,6 +219,57 @@ namespace MyClassLibrary
             }
         }
         //end of get and set
+
+        //Valid method
+        public string Valid(string staffNumber, string firstName, string lastName, string gender, string position, string password, double attendence, string address, string phoneNumber)
+        {
+            //create a string variable to store the error 
+            String Error = "";
+            //if the Staff Number is blank
+            if (staffNumber.Length == 0)
+            {
+                //record the error 
+                Error = Error + "The StaffNumber no may not be blank : ";
+            }
+            //if the length of the StaffNumber is less than 8
+            if (staffNumber.Length < 8)
+            {
+                Error = Error + "The StaffNumber must be great than 7: ";
+            }
+            //if the length of the StaffNumber is great than 12
+            if (staffNumber.Length > 12)
+            {
+                Error = Error + "The StaffNumber must be less than 12: ";
+            }
+
+            //if the First Name is blank
+            if (firstName.Length == 0)
+            {
+                //record the error 
+                Error = Error + "The firstName no may not be blank : ";
+            }
+            //if the length of the firstName is less than 8
+            if (firstName.Length > 50)
+            {
+                Error = Error + "The firstName must be less than 50: ";
+            }
+
+            //if the Last Name is blank
+            if (lastName.Length == 0)
+            {
+                //record the error 
+                Error = Error + "The lastName no may not be blank : ";
+            }
+            //if the length of the firstName is less than 8
+            if (lastName.Length > 50)
+            {
+                Error = Error + "The lastName must be less than 50: ";
+            }
+
+
+            return Error;
+        }
+        
 
     }
 }

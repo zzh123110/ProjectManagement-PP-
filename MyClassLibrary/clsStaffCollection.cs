@@ -9,6 +9,7 @@ namespace MyClassLibrary
         List<clsStaff> mStaffList = new List<clsStaff>();
         //private data member  thisStaff
         clsStaff mThisStaff = new clsStaff();
+
         public List<clsStaff> StaffList
         {
             get
@@ -20,6 +21,20 @@ namespace MyClassLibrary
             {
                 //set the private data 
                 mStaffList = value;
+            }
+        }
+
+        //public proeprty for count
+        public int Count
+        {
+            get
+            {
+                //return the count ofthe list 
+                return mStaffList.Count;
+            }
+            set
+            {
+                //we shall worry about later 
             }
         }
 
@@ -37,6 +52,41 @@ namespace MyClassLibrary
                 mThisStaff = value;
             }
         }
+
+        //constructor for the class 
+        public clsStaffCollection()
+        {
+            //var for the index 
+            Int32 Index = 0;
+            //var to store the record count 
+            Int32 RecordCount = 0;
+            //object for data connection 
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stored procedure 
+            DB.Execute("sproc_tblStaff_SelectAll");
+            //get the count of records
+            RecordCount = DB.Count;
+            //while there are records to precess
+            while (Index < RecordCount)
+            {
+                //create a blank address 
+                clsStaff AStaff = new clsStaff();
+                //read in the fields from the current record 
+                AStaff.StaffID = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffID"]);
+                AStaff.StaffNumber = Convert.ToString(DB.DataTable.Rows[Index]["StaffNumber"]);
+                AStaff.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
+                AStaff.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                AStaff.Gender = Convert.ToString(DB.DataTable.Rows[Index]["Gender"]);
+                AStaff.Position = Convert.ToString(DB.DataTable.Rows[Index]["Position"]);
+                AStaff.Attendence = Convert.ToDouble(DB.DataTable.Rows[Index]["Attendence"]);
+                AStaff.Address = Convert.ToString(DB.DataTable.Rows[Index]["Address"]);
+                //add the record to the private data muber 
+                mStaffList.Add(AStaff);
+                //point at the next record 
+                Index++;
+            }
+        }
+
         //add method
         public int Add()
         {
@@ -44,6 +94,7 @@ namespace MyClassLibrary
             //connnect to the database 
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the sotred procudrue 
+            DB.AddParameter("@StaffID", mThisStaff.StaffID);
             DB.AddParameter("@StaffNumber", mThisStaff.StaffNumber);
             DB.AddParameter("@FirstName ", mThisStaff.FirstName);
             DB.AddParameter("@LastName", mThisStaff.LastName);

@@ -229,12 +229,12 @@ namespace MyClassLibrary
             if (staffNumber.Length == 0)
             {
                 //record the error 
-                Error = Error + "The StaffNumber no may not be blank : ";
+                Error = Error + "The StaffNumber may not be blank : ";
             }
             //if the length of the StaffNumber is less than 8
             if (staffNumber.Length < 8)
             {
-                Error = Error + "The StaffNumber must be great than 7: ";
+                Error = Error + "The StaffNumber must be great than 8: ";
             }
             //if the length of the StaffNumber is great than 12
             if (staffNumber.Length > 12)
@@ -246,30 +246,116 @@ namespace MyClassLibrary
             if (firstName.Length == 0)
             {
                 //record the error 
-                Error = Error + "The firstName no may not be blank : ";
+                Error = Error + "The firstName may not be blank : ";
             }
-            //if the length of the firstName is less than 8
+            //if the length of the firstName is great than 50
             if (firstName.Length > 50)
             {
-                Error = Error + "The firstName must be less than 50: ";
+                Error = Error + "The firstName must be less than 51: ";
             }
 
             //if the Last Name is blank
             if (lastName.Length == 0)
             {
                 //record the error 
-                Error = Error + "The lastName no may not be blank : ";
+                Error = Error + "The lastName may not be blank : ";
             }
-            //if the length of the firstName is less than 8
+            //if the length of the lastName is less than 50
             if (lastName.Length > 50)
             {
-                Error = Error + "The lastName must be less than 50: ";
+                Error = Error + "The lastName must be less than 51: ";
             }
 
+            //if the Gender is blank
+            if (gender.Length == 0)
+            {
+                //record the error 
+                Error = Error + "The gender may not be blank : ";
+            }
+            //if the length of the gender is less than 4
+            if (gender.Length < 4)
+            {
+                Error = Error + "The gender must be great than 3: ";
+            }
+            //if the length of the gender is great than 10
+            if (gender.Length > 10)
+            {
+                Error = Error + "The gender must be less than 11: ";
+            }
+
+            //if the Position is blank
+            if (position.Length == 0)
+            {
+                //record the error 
+                Error = Error + "The postion may not be blank : ";
+            }
+            //if the length of the postion is great than 50
+            if (position.Length > 50)
+            {
+                Error = Error + "The positon must be less than 51: ";
+            }
+
+            //if the Password is blank
+            if (password.Length == 0)
+            {
+                //record the error 
+                Error = Error + "The gender no may not be blank : ";
+            }
+            //if the length of the password is less than 6
+            if (password.Length < 6)
+            {
+                Error = Error + "The gender must be great than 5: ";
+            }
+            //if the length of the password is great than 12
+            if (password.Length > 12)
+            {
+                Error = Error + "The gender must be less than 13 ";
+            }
+
+            //if the Attendence is less than 0
+            if (attendence < 0)
+            {
+                //record the error 
+                Error = Error + "The attendence must great than 0 : ";
+            }
+            //if  the attendence is great than 100
+            if (attendence > 100)
+            {
+                Error = Error + "The positon must be less than 101: ";
+            }
+
+            //if the Address is blank
+            if (address.Length == 0)
+            {
+                //record the error 
+                Error = Error + "The address no may not be blank : ";
+            }
+            //if the length of the address is great than 100
+            if (address.Length > 100)
+            {
+                Error = Error + "The address must be less than 101: ";
+            }
+
+            //if the PhoneNumber is blank
+            if (phoneNumber.Length == 0)
+            {
+                //record the error 
+                Error = Error + "The PhoneNumber no may not be blank : ";
+            }
+            //if the length of the phonenubmer is less than 5
+            if (phoneNumber.Length < 5)
+            {
+                Error = Error + "The PhoneNumber must be great than 4: ";
+            }
+            //if the length of the phonenubmer is great than 11
+            if (phoneNumber.Length > 11)
+            {
+                Error = Error + "The PhoneNumber must be less than 12: ";
+            }
 
             return Error;
         }
-        
+        //end of the valid
 
     }
 }

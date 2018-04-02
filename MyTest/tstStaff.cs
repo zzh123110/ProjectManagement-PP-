@@ -591,7 +591,7 @@ namespace MyTest
             //string variable to store any error messge 
             String Error = "";
             //create some test data to pass to the method 
-            string StaffNumber = "P16225612";
+            string StaffNumber = "P162256121";
             string FirstName = "Zihao";
             string LastName = "Zhang";
             string Gender = "Male";
@@ -743,6 +743,29 @@ namespace MyTest
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
+        [TestMethod]
+        public void FirtNameMid()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string FirstName = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            FirstName = FirstName.PadRight(25, 'a');
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
         //end of the firstname
 
         //vaildl last name 
@@ -881,6 +904,1004 @@ namespace MyTest
             //test to see that the result is correct 
             Assert.AreNotEqual(Error, "");
         }
+        [TestMethod]
+        public void LastNameMid()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string LastName = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            LastName = LastName.PadRight(50, 'a');
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
         //end the last name 
+
+        //vaild gender
+        [TestMethod]
+        public void GenderMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Mal";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void GenderMin()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void GenderMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Malea";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void GenderMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Maleaaaaa";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void GenderMax()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Maleaaaaaa";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void GenderMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Maleaaaaaaa";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void GenderMid()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        //end of gender
+
+        //vaild Position
+        [TestMethod]
+        public void PositionMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void PositionMin()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "aa";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PositionPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "aa";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PositionMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Position = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            Position = Position.PadRight(49, 'a');
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PositionMax()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Position = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            Position = Position.PadRight(50, 'a');
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PositionMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Position = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            Position = Position.PadRight(51, 'a');
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        public void PositionMid()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Position = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            Position = Position.PadRight(25, 'a');
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        //end of postion
+
+        //vaild password
+        [TestMethod]
+        public void PasswordMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfg";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void PasswordMin()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "cleaner";
+            string Password = "asdfga";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PasswordPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "aa";
+            string Password = "asdfgas";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PasswordMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Password = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            Password = Password.PadRight(11, 'a');
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PasswordMax()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Password = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            Password = Password.PadRight(12, 'a');
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PasswordMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Password = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            Password = Password.PadRight(13, 'a');
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void PasswordMid()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Password = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            Password = Password.PadRight(9, 'a');
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        //end of password
+
+        //vaild gender
+        [TestMethod]
+        public void AttendenceMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = -0.1;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AttendenceMin()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 0;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AttendenceMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 1.1;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AttendenceMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 99.9;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AttendenceMax()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Maleaaaaaa";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 100;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AttendenceMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 100.1;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AttendenceExtremeMin()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = -300;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AttendenceExtremeMax()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 300;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        //end of attendence
+
+        //vaild address
+        [TestMethod]
+        public void AddressMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfg";
+            double Attendence = 98.6;
+            string Address = "";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void AddressMin()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "cleaner";
+            string Password = "asdfga";
+            double Attendence = 98.6;
+            string Address = "L";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AddressMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "aa";
+            string Password = "asdfgas";
+            double Attendence = 98.6;
+            string Address = "Le";
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AddressMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Address = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            Address = Address.PadRight(99, 'a');
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AddressMax()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Address = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh"; ;
+            double Attendence = 98.6;
+            Address = Address.PadRight(100, 'a');
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void AddressMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Address = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh"; ;
+            double Attendence = 98.6;
+            Address = Address.PadRight(101, 'a');
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        public void AddressMid()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            string Address = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh"; ;
+            double Attendence = 98.6;
+            Address = Address.PadRight(50, 'a');
+            string PhoneNumber = "+12345678";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        //end of address
+
+        //vaild Phone nubmer
+        [TestMethod]
+        public void PhoneNumberMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Mal";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+123";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void PhoneNumberMin()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Male";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+1234";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PhoneNumberMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Malea";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PhoneNumberrMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Maleaaaaa";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+123456789";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PhoneNubmerMax()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Maleaaaaaa";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+1234567890";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void PhoneNubmerMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Maleaaaaaaa";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+12345678901";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void PhoneNubmerMid()
+        {
+            //create an instance of the class we want to create
+            clsStaff AStaff = new clsStaff();
+            //string variable to store any error messge 
+            String Error = "";
+            //create some test data to pass to the method 
+            string StaffNumber = "P1622604";
+            string FirstName = "Zihao";
+            string LastName = "Zhang";
+            string Gender = "Maleaaaaaa";
+            string Position = "Cleaner";
+            string Password = "asdfgasdfgh";
+            double Attendence = 98.6;
+            string Address = "Leicester";
+            string PhoneNumber = "+1234567";
+            //invoke the method 
+            Error = AStaff.Valid(StaffNumber, FirstName, LastName, Gender, Position, Password, Attendence, Address, PhoneNumber);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+        //end of phone nubmer
+
     }
 }

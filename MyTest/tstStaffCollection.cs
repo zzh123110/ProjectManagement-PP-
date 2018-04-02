@@ -48,14 +48,29 @@ namespace MyTest
             //test to see that the two values are the same 
             Assert.AreEqual(AllStaffs.StaffList, TestList);
         }
-      /*  [TestMethod]
+        /*
+        [TestMethod]
+        public void CountPropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsStaffCollection AllStaffs = new clsStaffCollection();
+            //create some test data to assign to the property 
+            Int32 SomeCount = 2;
+            //assign the data to the proepry 
+            AllStaffs.Count = SomeCount;
+            //test to see that two values are the same 
+            Assert.AreEqual(AllStaffs.Count, SomeCount);
+        }
+        */
+       [TestMethod]
         public void ThisStaffPropertyOK()
         {
             //create an instance of the class we want to create 
             clsStaffCollection AllStaffs = new clsStaffCollection();
             //create some test data ti assign to the property 
-            List<clsStaff> TestStaff = new List<clsStaff>();
+            clsStaff TestStaff = new clsStaff();
             //set its prperties 
+            TestStaff.StaffID = 1;
             TestStaff.StaffNumber = "P1622604";
             TestStaff.FirstName = "Zihao";
             TestStaff.LastName = "Zhang";
@@ -69,7 +84,46 @@ namespace MyTest
             AllStaffs.ThisStaff = TestStaff;
             //test to see that the two values are the same 
             Assert.AreEqual(AllStaffs.ThisStaff, TestStaff);
-        }*/
+        }
+        [TestMethod]
+        public void ListAndCountOK()
+        {
+            //create an instance of the class we want to create 
+            clsStaffCollection AllStaffs = new clsStaffCollection();
+            //create some test data ti assign to the property 
+            //in this cae the data needs to be a list of objects 
+            List <clsStaff> TestList = new List<clsStaff>();
+            //add  an item to the list 
+            //create the item of test data 
+            clsStaff TestItem = new clsStaff();
+            //set its prperties 
+            TestItem.StaffID = 1;
+            TestItem.StaffNumber = "P1622604";
+            TestItem.FirstName = "Zihao";
+            TestItem.LastName = "Zhang";
+            TestItem.Gender = "Male";
+            TestItem.Position = "Cleaner";
+            TestItem.Password = "asdfgasdfgh";
+            TestItem.Attendence = 98.6;
+            TestItem.Address = "Leicester";
+            TestItem.PhoneNumber = "+12345678";
+            //add the item to the test list 
+            TestList.Add(TestItem);
+            //assign the data to the property 
+            AllStaffs.StaffList = TestList;
+            //test to see that the two values are the same 
+            Assert.AreEqual(AllStaffs.Count, TestList.Count);
+        }
+        /*
+        [TestMethod]
+        public void TwoRecordsPresent()
+        {
+            //create an istance of the calss we want to create
+            clsStaffCollection AllStaffs = new clsStaffCollection();
+            //test to see taht the two varlues are the same
+            Assert.AreEqual(AllStaffs.Count, 2);
+        }
+        */
         // Add method
         [TestMethod]
         public void AddMethodOK()
@@ -81,6 +135,7 @@ namespace MyTest
             //var to store the primary key
             Int32 PrimaryKey = 0;
             //set its prperties 
+            TestItem.StaffID= 1;
             TestItem.StaffNumber = "P1622604";
             TestItem.FirstName = "Zihao";
             TestItem.LastName = "Zhang";

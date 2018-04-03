@@ -42,7 +42,7 @@ public partial class EnrollStaff : System.Web.UI.Page
             //add the record
             Astaff.Add();
             //all done so redirect back to the main page
-            Response.Redirect("Staff%20Information.aspx.aspx");
+            Response.Redirect("Staff%20Information.aspx");
         }
         else
         {

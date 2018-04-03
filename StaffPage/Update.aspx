@@ -1,14 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="EnrollStaff.aspx.cs" Inherits="EnrollStaff" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Update.aspx.cs" Inherits="Update" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Enrollment</title>
-    <link href="StaffPage.css" rel="stylesheet" />
+    <title>Update</title>
+    <link rel="stylesheet" type="text/css" href="StaffPage.css" />
 </head>
 <body>
-    <nav id="nav">
+<nav id="nav">
             <nav id="nav_wrapper">
                 <ul>
                     <li>
@@ -19,13 +19,14 @@
                     </li>
                     <li>
                         <a href="Update.aspx">Update</a>
-                    </li>                    
+                    </li>
+
                 </ul>
             </nav>
-    </nav>
-    <form id="form1" runat="server">               
-        <div>
-        <h1><strong>Student Information</strong></h1>
+ </nav>
+    <form id="form1" runat="server">
+    <div>
+            <h1><strong>Student Information</strong></h1>
           <br/>
           <br/>
         <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
@@ -66,8 +67,8 @@
         <asp:TextBox ID="TextBoxPhoneNumber" runat="server"></asp:TextBox>
         <br/>
         <br/>
-        <asp:Button ID="ButtonAdd" runat="server" Text="Submit" OnClick="ButtonAdd_Click" />
-        </div>
+        <asp:Button ID="ButtonUpdate" runat="server" Text="Update" OnClick="ButtonUpdate_Click" />
+    </div>
     </form>
 </body>
 </html>

@@ -20,18 +20,23 @@
                         <a href="EnrollStaff.aspx">Enrollment</a>
                     </li>
                     <li>
-                        <a href="update.html">Update</a>
-                    </li>
-                    <li>
-                        <a href="Search.html">Search</a>
+                        <a href="Update.aspx">Update</a>
                     </li>
                 </ul>
             </nav>
      </nav>
     <form id="form1" runat="server">
     <div>
+        <br />
+            <asp:Label ID="lblError" runat="server" style="z-index: 1; width: 393px"></asp:Label>
+
+            <br />
+            <br />
         <br/>
-        <asp:ListBox ID="lstStaffs" runat="server" Height="240px" Width="339px"></asp:ListBox>
+        <asp:ListBox ID="lstStaffs" runat="server" Height="329px" Width="500px"></asp:ListBox>
+        <br/>
+        <br/>
+        <asp:Button ID="ButtonUpdate" runat="server" Text="Update" OnClick="ButtonUpdate_Click" style="height: 26px" />
     </div>
     </form>
 </body>

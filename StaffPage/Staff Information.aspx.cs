@@ -9,9 +9,13 @@ public partial class Staff_Information : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       
-            //update the list box
-          //  DisplayStaffs();
+        //if this is the first time the page is displayed
+        if (IsPostBack == false)
+        {
+            // update the list box
+             DisplayStaffs();
+        }
+        
     }
     void DisplayStaffs()
     {
@@ -27,5 +31,26 @@ public partial class Staff_Information : System.Web.UI.Page
         lstStaffs.DataBind();
     }
 
-    
+
+
+    protected void ButtonUpdate_Click(object sender, EventArgs e)
+    {
+        //var to store the primary key value of the record to be edited
+        Int32 StaffID;
+        //if a record has been selected from the list
+        if (lstStaffs.SelectedIndex != -1)
+        {
+            //get the primary key value of the record to edit
+            StaffID = Convert.ToInt32(lstStaffs.SelectedValue);
+            //store the data in the session object
+            Session["StaffID"] = StaffID;
+            //redirect to the edit page
+            Response.Redirect("Update.aspx");
+        }
+        else//if no record has been selected
+        {
+            //display an error
+            lblError.Text = "Please select a record to delete from the list";
+        }
+    }
 }

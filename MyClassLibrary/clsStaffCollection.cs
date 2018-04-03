@@ -94,7 +94,7 @@ namespace MyClassLibrary
             //connnect to the database 
             clsDataConnection DB = new clsDataConnection();
             //set the parameters for the sotred procudrue 
-            DB.AddParameter("@StaffID", mThisStaff.StaffID);
+
             DB.AddParameter("@StaffNumber", mThisStaff.StaffNumber);
             DB.AddParameter("@FirstName ", mThisStaff.FirstName);
             DB.AddParameter("@LastName", mThisStaff.LastName);

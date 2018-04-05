@@ -23,9 +23,9 @@
                 </ul>
             </nav>
     </nav>
-    <form id="form1" runat="server">               
+    <form id="form1" runat="server">  
+        <h1><strong>Enroll A Staff</strong></h1>             
         <div>
-        <h1><strong>Student Information</strong></h1>
           <br/>
           <br/>
         <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>

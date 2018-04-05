@@ -25,8 +25,8 @@
             </nav>
  </nav>
     <form id="form1" runat="server">
-    <div>
-            <h1><strong>Student Information</strong></h1>
+    <h1><strong>Update</strong></h1>
+        <div>
           <br/>
           <br/>
         <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>

@@ -63,7 +63,7 @@ public partial class Update : System.Web.UI.Page
     void UpdateMethod()
     {
         //create an instance of the Staff
-        clsStaffCollection Astaff = new MyClassLibrary.clsStaffCollection();
+        clsStaffCollection Astaff = new clsStaffCollection();
         //validate the data on the web form
         String Error = Astaff.ThisStaff.Valid(TextBoxStaffNubmer.Text, TextBoxFirstName.Text, TextBoxLastName.Text, TextBoxGender.Text, TextBoxPosition.Text, TextBoxPassword.Text, Convert.ToInt32(TextBoxAttendence.Text), TextBoxAddress.Text, TextBoxPhoneNumber.Text);
         //if the data is OK then add it to the object

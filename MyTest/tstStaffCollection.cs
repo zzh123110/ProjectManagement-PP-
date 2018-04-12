@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MyClassLibrary;
+using Class_Library;
 using System.Collections.Generic;
 
 namespace MyTest
@@ -38,7 +38,7 @@ namespace MyTest
             TestItem.Gender = "Male";
             TestItem.Position = "Cleaner";
             TestItem.Password = "asdfgasdfgh";
-            TestItem.Attendence = 98.6;
+            TestItem.Attendence = 98.6m;
             TestItem.Address = "Leicester";
             TestItem.PhoneNumber = "+12345678";
             //add the item to the test lift 
@@ -77,7 +77,7 @@ namespace MyTest
             TestStaff.Gender = "Male";
             TestStaff.Position = "Cleaner";
             TestStaff.Password = "asdfgasdfgh";
-            TestStaff.Attendence = 98.6;
+            TestStaff.Attendence = 98.6m;
             TestStaff.Address = "Leicester";
             TestStaff.PhoneNumber = "+12345678";
             //assign the data to the property 
@@ -104,7 +104,7 @@ namespace MyTest
             TestItem.Gender = "Male";
             TestItem.Position = "Cleaner";
             TestItem.Password = "asdfgasdfgh";
-            TestItem.Attendence = 98.6;
+            TestItem.Attendence = 98.6m;
             TestItem.Address = "Leicester";
             TestItem.PhoneNumber = "+12345678";
             //add the item to the test list 
@@ -142,7 +142,7 @@ namespace MyTest
             TestItem.Gender = "Male";
             TestItem.Position = "Cleaner";
             TestItem.Password = "asdfgasdfgh";
-            TestItem.Attendence = 98.6;
+            TestItem.Attendence = 98.6m;
             TestItem.Address = "Leicester";
             TestItem.PhoneNumber = "+12345678";
             //set ThisStaff  to the test data 
@@ -173,7 +173,7 @@ namespace MyTest
             TestItem.Gender = "Male";
             TestItem.Position = "Cleaner";
             TestItem.Password = "asdfgasdfgh";
-            TestItem.Attendence = 98.6;
+            TestItem.Attendence = 98.6m;
             TestItem.Address = "Leicester";
             TestItem.PhoneNumber = "+12345678";
             //set ThisStaff  to the test data 
@@ -187,7 +187,7 @@ namespace MyTest
             TestItem.Gender = "Male";
             TestItem.Position = "Officer";
             TestItem.Password = "asdfgasdffh";
-            TestItem.Attendence = 99.6;
+            TestItem.Attendence = 99.6m;
             TestItem.Address = "London";
             TestItem.PhoneNumber = "+12345679";
             //set the crecod based on the new test data  
@@ -199,5 +199,32 @@ namespace MyTest
             //test to see that the two values are the same 
             Assert.AreEqual(AllStaffs.ThisStaff, TestItem);
         }
+
+        //filter by StaffNumber Method
+        [TestMethod]
+        public void FilterByStaffNoMethodOk()
+        {
+            //create an instance of the class we want to create 
+            clsStaffCollection AllStaffs = new clsStaffCollection();
+            //create an instance of the filtered data 
+            clsStaffCollection FilteredStaffs = new clsStaffCollection();
+            //applay a blank string (should return all records)
+            FilteredStaffs.FilterByStaffNo("");
+            //test to see that there are no records 
+            Assert.AreEqual(AllStaffs.Count, FilteredStaffs.Count);
+        }
+
+        //filter by StaffNumber None Fund
+        [TestMethod]
+        public void FilterByStaffNoNoneFound()
+        {
+            //create an instance of the class we want to create 
+            clsStaffCollection FilteredStaffs = new clsStaffCollection();
+            //applay a staff no that doesn't exist
+            FilteredStaffs.FilterByStaffNo("xxxxxxxx");
+            //test to see that there are no records 
+            Assert.AreEqual(0, FilteredStaffs.Count);
+        }
+
     }
 }

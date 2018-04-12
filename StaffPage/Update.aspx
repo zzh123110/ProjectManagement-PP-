@@ -20,7 +20,7 @@
                     <li>
                         <a href="Update.aspx">Update</a>
                     </li>
-
+                    <li style="float:right"><a href="LogIn.aspx">Log Out</a></li>    
                 </ul>
             </nav>
  </nav>
@@ -29,7 +29,7 @@
         <div>
           <br/>
           <br/>
-        <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="lblError" runat="server"></asp:Label>
         <br/>
         <asp:Label ID="LabelStaffNubmer" runat="server" Text="Staff Number" Width="100px"></asp:Label>
         <asp:TextBox ID="TextBoxStaffNubmer" runat="server"></asp:TextBox>

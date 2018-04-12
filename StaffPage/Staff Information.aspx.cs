@@ -20,7 +20,7 @@ public partial class Staff_Information : System.Web.UI.Page
     void DisplayStaffs()
     {
         //create an instance of the County Collection
-        MyClassLibrary.clsStaffCollection Staffs = new MyClassLibrary.clsStaffCollection();
+        Class_Library.clsStaffCollection Staffs = new Class_Library.clsStaffCollection();
         //set the data source to the list of counties in the collection
         lstStaffs.DataSource = Staffs.StaffList;
         //set the name of the primary key

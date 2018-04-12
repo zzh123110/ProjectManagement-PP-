@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using MyClassLibrary;
+using Class_Library;
 public partial class Update : System.Web.UI.Page
 {
     Int32 StaffID;
@@ -44,20 +44,8 @@ public partial class Update : System.Web.UI.Page
     protected void ButtonUpdate_Click(object sender, EventArgs e)
     {
 
-        //add the new record 
+        //update
         UpdateMethod();
-        //all done soredirect back to the main page
-        //Response.Redirect("Staff%20Information.aspx");
-        //if (StaffID == -1)
-        //{
-        //    //add the new record 
-        //    AddMethod();
-        //}
-        //else
-        //{
-        //    //update the record 
-        //    UpdateMethod();
-        //}
 
     }
     void UpdateMethod()
@@ -65,7 +53,7 @@ public partial class Update : System.Web.UI.Page
         //create an instance of the Staff
         clsStaffCollection Astaff = new clsStaffCollection();
         //validate the data on the web form
-        String Error = Astaff.ThisStaff.Valid(TextBoxStaffNubmer.Text, TextBoxFirstName.Text, TextBoxLastName.Text, TextBoxGender.Text, TextBoxPosition.Text, TextBoxPassword.Text, Convert.ToInt32(TextBoxAttendence.Text), TextBoxAddress.Text, TextBoxPhoneNumber.Text);
+        String Error = Astaff.ThisStaff.Valid(TextBoxStaffNubmer.Text, TextBoxFirstName.Text, TextBoxLastName.Text, TextBoxGender.Text, TextBoxPosition.Text, TextBoxPassword.Text, Convert.ToDecimal(TextBoxAttendence.Text), TextBoxAddress.Text, TextBoxPhoneNumber.Text);
         //if the data is OK then add it to the object
         if (Error == "")
         {
@@ -78,7 +66,7 @@ public partial class Update : System.Web.UI.Page
             Astaff.ThisStaff.Gender = TextBoxGender.Text;
             Astaff.ThisStaff.Position = TextBoxPosition.Text;
             Astaff.ThisStaff.Password = TextBoxPassword.Text;
-            Astaff.ThisStaff.Attendence = Convert.ToInt32(TextBoxAttendence.Text);
+            Astaff.ThisStaff.Attendence = Convert.ToDecimal(TextBoxAttendence.Text);
             Astaff.ThisStaff.Address = TextBoxAddress.Text;
             Astaff.ThisStaff.PhoneNumber = TextBoxPhoneNumber.Text;
             //add the record
@@ -89,43 +77,11 @@ public partial class Update : System.Web.UI.Page
         else
         {
             //report an error
-            lblError.Text = "There were problems with the data entered " + Error;
+            lblError.Text = "There were problems with the data entered: " + Error;
         }
 
     }
 
-    /*
-    void AddMethod()
-    {
-        //create an instance of the Staff
-        MyClassLibrary.clsStaffCollection Astaff = new MyClassLibrary.clsStaffCollection();
-        //validate the data on the web form
-        String Error = Astaff.ThisStaff.Valid(TextBoxStaffNubmer.Text, TextBoxFirstName.Text, TextBoxLastName.Text, TextBoxGender.Text, TextBoxPosition.Text, TextBoxPassword.Text, Convert.ToInt32(TextBoxAttendence.Text), TextBoxAddress.Text, TextBoxPhoneNumber.Text);
-        //if the data is OK then add it to the object
-        if (Error == "")
-        {
-            //get the data entered by the user
-            Astaff.ThisStaff.StaffNumber = TextBoxStaffNubmer.Text;
-            Astaff.ThisStaff.FirstName = TextBoxFirstName.Text;
-            Astaff.ThisStaff.LastName = TextBoxLastName.Text;
-            Astaff.ThisStaff.Gender = TextBoxGender.Text;
-            Astaff.ThisStaff.Position = TextBoxPosition.Text;
-            Astaff.ThisStaff.Password = TextBoxPassword.Text;
-            Astaff.ThisStaff.Attendence = Convert.ToInt32(TextBoxAttendence.Text);
-            Astaff.ThisStaff.Address = TextBoxAddress.Text;
-            Astaff.ThisStaff.PhoneNumber = TextBoxPhoneNumber.Text;
-            //add the record
-            Astaff.Add();
-            //all done so redirect back to the main page
-            Response.Redirect("Staff%20Information.aspx");
-        }
-        else
-        {
-            //report an error
-            lblError.Text = "There were problems with the data entered " + Error;
-        }
-    }
-    */
 
  
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTest", "MyTest\MyTest.csproj", "{0F6AE2FE-5C2A-4BD9-B2EE-2C10AC15C171}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyClassLibrary", "MyClassLibrary\MyClassLibrary.csproj", "{491C608B-14B3-421D-BF14-7401E815C54F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class_Library", "MyClassLibrary\Class_Library.csproj", "{491C608B-14B3-421D-BF14-7401E815C54F}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "StaffPage(1)", "StaffPage\", "{358FBF0A-C5DC-4CF4-B67D-69F05EC6D13A}"
 	ProjectSection(WebsiteProperties) = preProject

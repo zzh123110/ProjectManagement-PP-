@@ -16,16 +16,15 @@ public partial class EnrollStaff : System.Web.UI.Page
     {
         //add the new record 
         Add();
-        //all done soredirect back to the main page
-        Response.Redirect("Staff%20Information.aspx");
-    }
 
+    }
+    
     void Add()
     {
         //create an instance of the Staff
-        MyClassLibrary.clsStaffCollection Astaff = new MyClassLibrary.clsStaffCollection();
+        Class_Library.clsStaffCollection Astaff = new Class_Library.clsStaffCollection();
         //validate the data on the web form
-        String Error = Astaff.ThisStaff.Valid(TextBoxStaffNubmer.Text, TextBoxFirstName.Text, TextBoxLastName.Text, TextBoxGender.Text, TextBoxPosition.Text, TextBoxPassword.Text, Convert.ToInt32(TextBoxAttendence.Text), TextBoxAddress.Text, TextBoxPhoneNumber.Text);
+        String Error = Astaff.ThisStaff.Valid(TextBoxStaffNubmer.Text, TextBoxFirstName.Text, TextBoxLastName.Text, TextBoxGender.Text, TextBoxPosition.Text, TextBoxPassword.Text, Convert.ToDecimal(TextBoxAttendence.Text), TextBoxAddress.Text, TextBoxPhoneNumber.Text);
         //if the data is OK then add it to the object
         if (Error == "")
         {
@@ -36,7 +35,7 @@ public partial class EnrollStaff : System.Web.UI.Page
             Astaff.ThisStaff.Gender = TextBoxGender.Text;
             Astaff.ThisStaff.Position = TextBoxPosition.Text;
             Astaff.ThisStaff.Password = TextBoxPassword.Text;
-            Astaff.ThisStaff.Attendence = Convert.ToInt32(TextBoxAttendence.Text);
+            Astaff.ThisStaff.Attendence = Convert.ToDecimal(TextBoxAttendence.Text);
             Astaff.ThisStaff.Address = TextBoxAddress.Text;
             Astaff.ThisStaff.PhoneNumber = TextBoxPhoneNumber.Text;
             //add the record
@@ -47,7 +46,7 @@ public partial class EnrollStaff : System.Web.UI.Page
         else
         {
             //report an error
-            lblError.Text = "There were problems with the data entered " + Error;
+            lblError.Text = "There were problems with the data entered: " + Error;
         }
     }
 }

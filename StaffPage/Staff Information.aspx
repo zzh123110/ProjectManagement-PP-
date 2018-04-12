@@ -22,6 +22,7 @@
                     <li>
                         <a href="Update.aspx">Update</a>
                     </li>
+                    <li style="float:right"><a href="LogIn.aspx">Log Out</a></li>    
                 </ul>
             </nav>
      </nav>

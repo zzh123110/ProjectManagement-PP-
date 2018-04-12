@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyClassLibrary
+namespace Class_Library
 {
     public class clsStaff
     {
@@ -12,7 +12,7 @@ namespace MyClassLibrary
         private string mGender;
         private string mPosition;
         private string mPassword;
-        private double mAttendence;
+        private decimal mAttendence;
         private string mAddress;
         private string mPhoneNumber;
         
@@ -47,13 +47,16 @@ namespace MyClassLibrary
             if (DB.Count == 1)
             {
                 //copy the data from the database to the private data members
+                mStaffID = Convert.ToInt32(DB.DataTable.Rows[0]["StaffID"]);
                 mStaffNumber = Convert.ToString(DB.DataTable.Rows[0]["StaffNumber"]);
                 mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
                 mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
                 mGender = Convert.ToString(DB.DataTable.Rows[0]["Gender"]);
                 mPosition = Convert.ToString(DB.DataTable.Rows[0]["Position"]);
-                mAttendence = Convert.ToDouble(DB.DataTable.Rows[0]["Attendence"]);
+                mPassword = Convert.ToString(DB.DataTable.Rows[0]["Password"]);
+                mAttendence = Convert.ToDecimal(DB.DataTable.Rows[0]["Attendence"]);
                 mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
+                mPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["PhoneNumber"]);
                 //return that everthing worked OK
                 return true;
             }
@@ -175,7 +178,7 @@ namespace MyClassLibrary
         }
 
         //public propert for the Attendence 
-        public double Attendence
+        public decimal Attendence
         {
             get
             {
@@ -221,7 +224,7 @@ namespace MyClassLibrary
         //end of get and set
 
         //Valid method
-        public string Valid(string staffNumber, string firstName, string lastName, string gender, string position, string password, double attendence, string address, string phoneNumber)
+        public string Valid(string staffNumber, string firstName, string lastName, string gender, string position, string password, decimal attendence, string address, string phoneNumber)
         {
             //create a string variable to store the error 
             String Error = "";
@@ -229,128 +232,128 @@ namespace MyClassLibrary
             if (staffNumber.Length == 0)
             {
                 //record the error 
-                Error = Error + "The StaffNumber may not be blank : ";
+                Error = Error + "The StaffNumber may not be blank  ";
             }
             //if the length of the StaffNumber is less than 8
             if (staffNumber.Length < 8)
             {
-                Error = Error + "The StaffNumber must be great than 8: ";
+                Error = Error + "The StaffNumber must be greater than 7 ";
             }
-            //if the length of the StaffNumber is great than 12
+             //if the length of the StaffNumber is great than 12
             if (staffNumber.Length > 12)
             {
-                Error = Error + "The StaffNumber must be less than 12: ";
-            }
+                Error = Error + "The StaffNumber must be less than 13 ";
+            } 
 
             //if the First Name is blank
             if (firstName.Length == 0)
             {
                 //record the error 
-                Error = Error + "The firstName may not be blank : ";
+                Error = Error + "The firstName may not be blank  ";
             }
             //if the length of the firstName is great than 50
             if (firstName.Length > 50)
             {
-                Error = Error + "The firstName must be less than 51: ";
+                Error = Error + "The firstName must be less than 51 ";
             }
 
             //if the Last Name is blank
             if (lastName.Length == 0)
             {
                 //record the error 
-                Error = Error + "The lastName may not be blank : ";
+                Error = Error + "The lastName may not be blank  ";
             }
             //if the length of the lastName is less than 50
             if (lastName.Length > 50)
             {
-                Error = Error + "The lastName must be less than 51: ";
+                Error = Error + "The lastName must be less than 51 ";
             }
 
             //if the Gender is blank
             if (gender.Length == 0)
             {
                 //record the error 
-                Error = Error + "The gender may not be blank : ";
+                Error = Error + "The gender may not be blank  ";
             }
             //if the length of the gender is less than 4
             if (gender.Length < 4)
             {
-                Error = Error + "The gender must be great than 3: ";
+                Error = Error + "The gender must be greater than 3 ";
             }
-            //if the length of the gender is great than 10
+            //if the length of the gender is greater than 11
             if (gender.Length > 10)
             {
-                Error = Error + "The gender must be less than 11: ";
+                Error = Error + "The gender must be less than 11 ";
             }
 
             //if the Position is blank
             if (position.Length == 0)
             {
                 //record the error 
-                Error = Error + "The postion may not be blank : ";
+                Error = Error + "The postion may not be blank  ";
             }
             //if the length of the postion is great than 50
             if (position.Length > 50)
             {
-                Error = Error + "The positon must be less than 51: ";
+                Error = Error + "The positon must be less than 51 ";
             }
 
             //if the Password is blank
             if (password.Length == 0)
             {
                 //record the error 
-                Error = Error + "The gender no may not be blank : ";
+                Error = Error + "The password no may not be blank  ";
             }
             //if the length of the password is less than 6
             if (password.Length < 6)
             {
-                Error = Error + "The gender must be great than 5: ";
+                Error = Error + "The password must be greater than 5 ";
             }
             //if the length of the password is great than 12
             if (password.Length > 12)
             {
-                Error = Error + "The gender must be less than 13 ";
+                Error = Error + "The password must be less than 13 ";
             }
 
             //if the Attendence is less than 0
             if (attendence < 0)
             {
                 //record the error 
-                Error = Error + "The attendence must great than 0 : ";
+                Error = Error + "The attendence must greater than 0 ";
             }
             //if  the attendence is great than 100
             if (attendence > 100)
             {
-                Error = Error + "The positon must be less than 101: ";
+                Error = Error + "The positon must be less than 101 ";
             }
 
             //if the Address is blank
             if (address.Length == 0)
             {
                 //record the error 
-                Error = Error + "The address no may not be blank : ";
+                Error = Error + "The address no may not be blank ";
             }
             //if the length of the address is great than 100
             if (address.Length > 100)
             {
-                Error = Error + "The address must be less than 101: ";
+                Error = Error + "The address must be less than 101";
             }
 
             //if the PhoneNumber is blank
             if (phoneNumber.Length == 0)
             {
                 //record the error 
-                Error = Error + "The PhoneNumber no may not be blank : ";
+                Error = Error + "The PhoneNumber no may not be blank ";
             }
             //if the length of the phonenubmer is less than 5
             if (phoneNumber.Length < 5)
             {
-                Error = Error + "The PhoneNumber must be great than 4: ";
+                Error = Error + "The PhoneNumber must be greater than 4 ";
             }
             //if the length of the phonenubmer is great than 11
             if (phoneNumber.Length > 11)
             {
-                Error = Error + "The PhoneNumber must be less than 12: ";
+                Error = Error + "The PhoneNumber must be less than 12 ";
             }
 
             return Error;

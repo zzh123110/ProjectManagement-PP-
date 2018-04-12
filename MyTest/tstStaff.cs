@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MyClassLibrary;
+using Class_Library;
 
 namespace MyTest
 {
@@ -215,7 +215,7 @@ namespace MyTest
             //create an instance of the class we want to create
             clsStaff AStaff = new clsStaff();
             //create some test data to assign to the property
-            double tstAttendence = 98.6;
+            decimal tstAttendence = 98.6m;
             //Assign the data to the property
             AStaff.Attendence = tstAttendence;
             //test to see that the two values are the same
@@ -394,7 +394,7 @@ namespace MyTest
             //invoke the moethod 
             Search = AStaff.Search(StaffID);
             //check the property
-            if (AStaff.Attendence != 98.6)
+            if (AStaff.Attendence != 96m)
             {
                 OK = false;
             }
@@ -441,7 +441,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -465,7 +465,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -487,7 +487,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -509,7 +509,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -531,7 +531,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -553,7 +553,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -575,7 +575,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -597,7 +597,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -622,7 +622,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -644,7 +644,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -666,7 +666,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -689,7 +689,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -712,7 +712,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -735,7 +735,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -758,7 +758,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -783,7 +783,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -805,7 +805,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -827,7 +827,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -850,7 +850,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -873,7 +873,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -896,7 +896,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -919,7 +919,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -944,7 +944,7 @@ namespace MyTest
             string Gender = "Mal";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -966,7 +966,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -988,7 +988,7 @@ namespace MyTest
             string Gender = "Malea";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1010,7 +1010,7 @@ namespace MyTest
             string Gender = "Maleaaaaa";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1032,7 +1032,7 @@ namespace MyTest
             string Gender = "Maleaaaaaa";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1054,7 +1054,7 @@ namespace MyTest
             string Gender = "Maleaaaaaaa";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1076,7 +1076,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1101,7 +1101,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1123,7 +1123,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "aa";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1145,7 +1145,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "aa";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1168,7 +1168,7 @@ namespace MyTest
             string Gender = "Male";
             Position = Position.PadRight(49, 'a');
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1191,7 +1191,7 @@ namespace MyTest
             string Gender = "Male";
             Position = Position.PadRight(50, 'a');
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1214,7 +1214,7 @@ namespace MyTest
             string Gender = "Male";
             Position = Position.PadRight(51, 'a');
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1236,7 +1236,7 @@ namespace MyTest
             string Gender = "Male";
             Position = Position.PadRight(25, 'a');
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1261,7 +1261,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfg";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1283,7 +1283,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "cleaner";
             string Password = "asdfga";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1305,7 +1305,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "aa";
             string Password = "asdfgas";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1328,7 +1328,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             Password = Password.PadRight(11, 'a');
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1351,7 +1351,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             Password = Password.PadRight(12, 'a');
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1374,7 +1374,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             Password = Password.PadRight(13, 'a');
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1397,7 +1397,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             Password = Password.PadRight(9, 'a');
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1422,7 +1422,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = -0.1;
+            decimal Attendence = -0.1m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1444,7 +1444,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 0;
+            decimal Attendence = 0;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1466,7 +1466,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 1.1;
+            decimal Attendence = 1.1m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1488,7 +1488,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 99.9;
+            decimal Attendence = 99.9m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1510,7 +1510,7 @@ namespace MyTest
             string Gender = "Maleaaaaaa";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 100;
+            decimal Attendence = 100;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1532,7 +1532,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 100.1;
+            decimal Attendence = 100.1m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1554,7 +1554,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = -300;
+            decimal Attendence = -300;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1576,7 +1576,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 300;
+            decimal Attendence = 300;
             string Address = "Leicester";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1601,7 +1601,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfg";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1623,7 +1623,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "cleaner";
             string Password = "asdfga";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "L";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1645,7 +1645,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "aa";
             string Password = "asdfgas";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Le";
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1668,7 +1668,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             Address = Address.PadRight(99, 'a');
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1691,7 +1691,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh"; ;
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             Address = Address.PadRight(100, 'a');
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1714,7 +1714,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh"; ;
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             Address = Address.PadRight(101, 'a');
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1736,7 +1736,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh"; ;
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             Address = Address.PadRight(50, 'a');
             string PhoneNumber = "+12345678";
             //invoke the method 
@@ -1761,7 +1761,7 @@ namespace MyTest
             string Gender = "Mal";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+123";
             //invoke the method 
@@ -1783,7 +1783,7 @@ namespace MyTest
             string Gender = "Male";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+1234";
             //invoke the method 
@@ -1805,7 +1805,7 @@ namespace MyTest
             string Gender = "Malea";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345";
             //invoke the method 
@@ -1827,7 +1827,7 @@ namespace MyTest
             string Gender = "Maleaaaaa";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+123456789";
             //invoke the method 
@@ -1849,7 +1849,7 @@ namespace MyTest
             string Gender = "Maleaaaaaa";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+1234567890";
             //invoke the method 
@@ -1871,7 +1871,7 @@ namespace MyTest
             string Gender = "Maleaaaaaaa";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+12345678901";
             //invoke the method 
@@ -1893,7 +1893,7 @@ namespace MyTest
             string Gender = "Maleaaaaaa";
             string Position = "Cleaner";
             string Password = "asdfgasdfgh";
-            double Attendence = 98.6;
+            decimal Attendence = 98.6m;
             string Address = "Leicester";
             string PhoneNumber = "+1234567";
             //invoke the method 
